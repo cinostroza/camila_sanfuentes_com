@@ -1,0 +1,12 @@
+{%extends "base.html"%}
+{%block body_block%}
+    <div class="bloghead"></div>
+    <div class="container-fluid">
+        <form method="post">
+            {%csrf_token%}
+            <p>Are you sure you want to delete {{object}}?</p>
+            <input type="submit" class='btn btn-danger' value="Delete">
+        </form>
+    </div>
+
+{%endblock%}

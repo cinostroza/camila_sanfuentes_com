@@ -26,7 +26,7 @@ def generate_header(data):
 def generate_image(data):
     url = data.get('file', {}).get('url')
     caption = data.get('caption')
-    classes = ['cs-blog-image', 'it_works']
+    classes = ['cs-blog-image']
 
     if data.get('stretched'):
         classes.append('stretched')
@@ -37,7 +37,7 @@ def generate_image(data):
 
     classes = ' '.join(classes)
 
-    return f'<img src="{url}" alt="{caption}" class="{classes}" /><p class="text-center">{caption}</p>'
+    return f'<img src="{url}" alt="{caption}" class="{classes}" /><p class="text-center fst-italic fw-light">{caption}</p>'
 
 
 def generate_delimiter():

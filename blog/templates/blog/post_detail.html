@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block body_block %}
-{% load editorjs %}
+    {% load editorjs %}
 
     <div class="container container-fluid bloghead" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url({{ post.post_header_image.url }});
             background-position: center;
@@ -24,6 +24,25 @@
                 {{ post.body | editorjs }}
             </div>
         </div>
+    <div class="d-flex justify-content-evenly">
+                {%if user.is_authenticated%}
+            {%if post.date%}
+                <div class="date postdate">
+                    Publicado el: {{post.date}}
+                </div>
+            {%else%}
+                <a class='btn btn-success px-3' href="{%url 'blog:post_publish' pk=post.pk%}">Publicar</a>
+            {%endif%}
+            <a class="btn btn-primary px-3" href="{%url 'blog:post_edit' pk=post.pk%}">
+                Editar
+            </a>
+            <a class="btn btn-danger px-3" href="{%url 'blog:post_remove' pk=post.pk%}">
+                Eliminar
+            </a>
+        {%else%}
+        {%endif%}
+    </div>
+
     </div>
     {{ post.media }}
 {%endblock%}
