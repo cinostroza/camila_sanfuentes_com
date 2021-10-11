@@ -1,7 +1,7 @@
 from django.db import models
 from django.utils import timezone
 from django.urls import reverse
-from django_editorjs_fields import EditorJsJSONField
+from editorjs_fields import EditorJsJSONField
 
 
 # Create your models here.
