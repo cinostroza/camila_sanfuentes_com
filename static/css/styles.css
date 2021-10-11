@@ -11556,6 +11556,21 @@ body {
   background-size: cover;
 }
 
+.delimiter {
+  background-color: #1a1e21;
+  padding: 1px 0;
+  margin: 15px auto;
+  display: block;
+  max-width: 50%;
+}
+
+.cs-blog-image {
+  display: block;
+  max-width: 70%;
+  height: auto;
+  margin: 15px auto;
+}
+
 .bloghead {
   position: relative;
   width: 100%;
