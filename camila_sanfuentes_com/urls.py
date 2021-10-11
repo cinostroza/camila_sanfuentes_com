@@ -21,6 +21,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
                   path('admin/', admin.site.urls),
+                  path('logout/', views.logout_view, name='logout'),
                   path('blog/', include('blog.urls', namespace='blog')),
                   path('', views.Index.as_view(), name='index'),
                   path('editorjs/', include('editorjs_fields.urls')),
