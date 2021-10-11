@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load crispy_forms_field %}
+{% load crispy_forms_tags %}
+{% block body_block %}
+    <div class="container-fluid bg-dark bg-opacity-75" style="padding-top: 5rem;"></div>
+        <div class="row pt-4 pt-lg-5 pb-4 pb-lg-5">
+        <div class="col-4"></div>
+            <div class="col-4">
+                <form class="post-form" method="post" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form|crispy }}
+                    <div class="pt-5 d-flex justify-content-center">
+                        <input class="btn btn-primary" type="submit" value="Guardar">
+                    </div>
+                </form>
+            </div>
+        <div class="col4"></div>
+        </div>
+    {{ form.media }}
+{% endblock %}
