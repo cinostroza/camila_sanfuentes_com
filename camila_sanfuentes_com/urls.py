@@ -23,5 +23,5 @@ urlpatterns = [
                   path('admin/', admin.site.urls),
                   path('blog/', include('blog.urls', namespace='blog')),
                   path('', views.Index.as_view(), name='index'),
-                  path('editorjs/', include('django_editorjs_fields.urls')),
+                  path('editorjs/', include('editorjs_fields.urls')),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
