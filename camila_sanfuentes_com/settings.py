@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'blog',
     'crispy_forms',
     'editorjs_fields',
+    'contact_manager',
 ]
 
 MIDDLEWARE = [
