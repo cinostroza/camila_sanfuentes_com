@@ -154,6 +154,11 @@
         <div class="row gx-4 gx-lg-5">
             <div class="col-md-10 col-lg-8 mx-auto text-center">
                 <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                {% if messages %}
+                        {% for message in messages %}
+                            <h2 class="text-white mb-5">{{ message }}</h2>
+                        {% endfor %}
+                {% else %}
                 <h2 class="text-white mb-5">Suscribete para recibir actualizaciones!</h2>
                 <form class="form-signup" method="post">
                     {% csrf_token %}
@@ -164,6 +169,7 @@
                         <div class="col-auto"><button class="btn btn-primary" type="submit">Notificame!</button></div>
                     </div>
                 </form>
+            {% endif %}
             </div>
         </div>
     </div>

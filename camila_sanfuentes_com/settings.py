@@ -16,6 +16,7 @@ import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 BLOG_TEMPLATE_DIR = Path.joinpath(BASE_DIR, 'blog/templates/blog')
+GALLERY_TEMPLATE_DIR = Path.joinpath(BASE_DIR, 'gallery/templates/gallery')
 MEDIA_ROOT = Path.joinpath(BASE_DIR, 'media_files')
 MEDIA_URL = 'media/'
 # STATIC_ROOT = Path.joinpath(BASE_DIR, 'static')
@@ -44,6 +45,7 @@ INSTALLED_APPS = [
     'crispy_forms',
     'editorjs_fields',
     'contact_manager',
+    'gallery',
 ]
 
 MIDDLEWARE = [
@@ -62,7 +64,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [BASE_DIR / 'templates',
-                 BLOG_TEMPLATE_DIR],
+                 BLOG_TEMPLATE_DIR,
+                 GALLERY_TEMPLATE_DIR],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
