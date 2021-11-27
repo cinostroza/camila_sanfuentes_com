@@ -2,73 +2,12 @@
 {% extends 'base.html' %}
 {% load static %}
 
-{% block head_block %}
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
-    <title>Freebie: 4 Bootstrap Gallery Templates</title>
-
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css">
-    <link rel="stylesheet" href="{% static 'css/fluid-gallery.css' %}">
-
-
-{% endblock %}
 {% block body_block %}
 
-<div class="container gallery-container">
-
-    <h1>Bootstrap 3 Gallery</h1>
-
-    <p class="page-description text-center">Fluid Layout With Overlay Effect</p>
-    
-    <div class="tz-gallery">
-
-        <div class="row">
-
-            <div class="col-sm-12 col-md-4">
-                <a class="lightbox" href="{% get_media_prefix %}gallery/bridge.jpg">
-                    <img src="{% get_media_prefix %}gallery/bridge.jpg" alt="Bridge">
-                </a>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="{% get_media_prefix %}/gallery/park.jpg">
-                    <img src="{% get_media_prefix %}/gallery/park.jpg" alt="Park">
-                </a>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="{% get_media_prefix %}/gallery/tunnel.jpg">
-                    <img src="{% get_media_prefix %}/gallery/tunnel.jpg" alt="Tunnel">
-                </a>
-            </div>
-            <div class="col-sm-12 col-md-8">
-                <a class="lightbox" href="{% get_media_prefix %}/gallery/traffic.jpg">
-                    <img src="{% get_media_prefix %}/gallery/traffic.jpg" alt="Traffic">
-                </a>
-            </div>
-            <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="{% get_media_prefix %}/gallery/coast.jpg">
-                    <img src="{% get_media_prefix %}/gallery/coast.jpg" alt="Coast">
-                </a>
-            </div> 
-            <div class="col-sm-6 col-md-4">
-                <a class="lightbox" href="{% get_media_prefix %}/gallery/rails.jpg">
-                    <img src="{% get_media_prefix %}/gallery/rails.jpg" alt="Rails">
-                </a>
-            </div>
-
-        </div>
-
-    </div>
-
+<div class="container-fluid">
+{% for image in images %}
+<img src="{{ image.image_file.url }}" alt="...">
+{% endfor %}
 </div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
-<script>
-    baguetteBox.run('.tz-gallery');
-</script>
 
 {% endblock %}

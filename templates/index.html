@@ -4,16 +4,16 @@
 {% load crispy_forms_tags %}
 {% block body_block %}
     <header class="masthead">
-    <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-        <div class="d-flex justify-content-center">
-            <div class="text-center">
-                <h1 class="mx-auto my-0 text-uppercase">Camila Sanfuentes</h1>
-                <h2 class="text-white-50 mx-auto mt-2 mb-5">Fotografa de naturaleza.</h2>
-                <a class="btn btn-primary" href="#contact">Contacto</a>
+        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+            <div class="d-flex justify-content-center">
+                <div class="text-center">
+                    <h1 class="mx-auto my-0 text-uppercase">Camila Sanfuentes</h1>
+                    <h2 class="text-white-50 mx-auto mt-2 mb-5">Fotografa de naturaleza.</h2>
+                    <a class="btn btn-primary" href="#contact">Contacto</a>
+                </div>
             </div>
         </div>
-    </div>
-</header>
+    </header>
     <!-- About-->
     <section class="about-section text-center" id="about">
         <div class="container">
@@ -22,9 +22,12 @@
                     <img class="img-fluid pb-5" src="{% static 'assets/img/about.jpeg'%}" alt="..." />
                 </div>
                 <div class="col-lg-6 my-auto text-center text-lg-left">
-                    <h2 class="text-white">Sobre mi...</h2>
+                    <h2 class="text-white">Acerca de mi...</h2>
                     <p class="text-white-50">
-                        Soy una fotografa de naturaleza Chilena...
+                        Soy fotógrafa de naturaleza y bióloga. Me encanta estar en contacto con la naturaleza desde temprana edad. En un comienzo la fotografia me servia como una herramienta mas para mi carrera, para luego transformarse en una forma de vida. No me gusta encasillarme en estilos fotográficos, siempre hay que salir de nuestra zona de confort, es super enriquecedor mezclar conocimientos de distintas áreas, la vida es un continuo aprendizaje. Aunque tengo mis favoritos: macrofotografia, fauna y paisajes.
+                    </p>
+                    <p class="text-white-50">
+                        La fotografia es lo que me llena y me hace feliz, por eso quise crear esta pagina, para compartir con ustedes mi trabajo, experiencias, tips y mucho mas!
                     </p>
                 </div>
             </div>
@@ -102,12 +105,12 @@
             {#                </div>#}
             <!-- Project One Row-->
             <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-                <div class="col-lg-6"><img class="img-fluid" src="/static/assets/img/macro_portada.jpg" alt="..." /></div>
+                <div class="col-lg-6"><a href="{% url 'gallery:macro' %}"><img class="img-fluid" src="/static/assets/img/macro_portada.jpg" alt="..." /></a></div>
                 <div class="col-lg-6">
                     <div class="bg-black text-center h-100 project">
                         <div class="d-flex h-100">
                             <div class="project-text w-100 my-auto text-center text-lg-left">
-                                <h4 class="text-white">Macrofotografia</h4>
+                                <h4 class="text-white"><a href="{% url 'gallery:macro' %}">Macrofotografia</a></h4>
                                 <p class="mb-0 text-white-50">Maravillate con los detalles que nos rodean.</p>
                                 <hr class="d-none d-lg-block mb-0 ms-0" />
                             </div>
@@ -117,12 +120,12 @@
             </div>
             <!-- Project Two Row-->
             <div class="row gx-0 justify-content-center">
-                <div class="col-lg-6"><img class="img-fluid" src="/static/assets/img/paisajes_portada.jpg" alt="..." /></div>
+                <div class="col-lg-6"><a href="{% url 'gallery:paisajes' %}"><img class="img-fluid" src="/static/assets/img/paisajes_portada.jpg" alt="..." /></a></div>
                 <div class="col-lg-6 order-lg-first">
                     <div class="bg-black text-center h-100 project">
                         <div class="d-flex h-100">
                             <div class="project-text w-100 my-auto text-center text-lg-right">
-                                <h4 class="text-white">Paisajes</h4>
+                                <h4 class="text-white"><a href="{% url 'gallery:paisajes' %}">Paisajes</a></h4>
                                 <p class="mb-0 text-white-50">Descubre paisajes cotidianos con una nueva mirada</p>
                                 <hr class="d-none d-lg-block mb-0 me-0" />
                             </div>
@@ -132,46 +135,62 @@
             </div>
             <!-- Project Three row -->
             <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
-                <div class="col-lg-6"><img class="img-fluid" src="/static/assets/img/fauna_portada.jpg" alt="..." /></div>
+                <div class="col-lg-6"><a href="{% url 'gallery:fauna' %}"><img class="img-fluid" src="/static/assets/img/fauna_portada.jpg" alt="..." /></a></div>
                 <div class="col-lg-6">
                     <div class="bg-black text-center h-100 project">
                         <div class="d-flex h-100">
                             <div class="project-text w-100 my-auto text-center text-lg-left">
-                                <h4 class="text-white">Fauna Salvaje</h4>
-                                <p class="mb-0 text-white-50">Los serevivos.</p>
+                                <h4 class="text-white"><a href="{% url 'gallery:fauna' %}">Fauna Salvaje</a></h4>
+                                <p class="mb-0 text-white-50">Descubre la gran variedad de fauna salvaje que habita en nuestro pais.</p>
                                 <hr class="d-none d-lg-block mb-0 ms-0" />
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <!-- Project Four row -->
+            <div class="row gx-0 justify-content-center">
+                <div class="col-lg-6"><a href="{% url 'gallery:black_and_white' %}"><img class="img-fluid" src="/static/assets/img/paisajes_portada.jpg" alt="..." /></a></div>
+                <div class="col-lg-6 order-lg-first">
+                    <div class="bg-black text-center h-100 project">
+                        <div class="d-flex h-100">
+                            <div class="project-text w-100 my-auto text-center text-lg-right">
+                                <h4 class="text-white"><a href="{% url 'gallery:black_and_white' %}">Blanco y Negro</a></h4>
+                                <p class="mb-0 text-white-50">Enveses la bida es mejor sin colores</p>
+                                <hr class="d-none d-lg-block mb-0 me-0" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </section>
     <!-- Signup-->
 
-<section class="signup-section" id="signup">
-    <div class="container px-4 px-lg-5">
-        <div class="row gx-4 gx-lg-5">
-            <div class="col-md-10 col-lg-8 mx-auto text-center">
-                <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
-                {% if messages %}
+    <section class="signup-section" id="signup">
+        <div class="container px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5">
+                <div class="col-md-10 col-lg-8 mx-auto text-center">
+                    <i class="far fa-paper-plane fa-2x mb-2 text-white"></i>
+                    {% if messages %}
                         {% for message in messages %}
                             <h2 class="text-white mb-5">{{ message }}</h2>
                         {% endfor %}
-                {% else %}
-                <h2 class="text-white mb-5">Suscribete para recibir actualizaciones!</h2>
-                <form class="form-signup" method="post">
-                    {% csrf_token %}
-                    <div class="row input-group-newsletter">
-                        <div class="col">
-                            {{ form.email}}
-                        </div>
-                        <div class="col-auto"><button class="btn btn-primary" type="submit">Notificame!</button></div>
-                    </div>
-                </form>
-            {% endif %}
+                    {% else %}
+                        <h2 class="text-white mb-5">Suscribete para recibir actualizaciones!</h2>
+                        <form class="form-signup" method="post">
+                            {% csrf_token %}
+                            <div class="row input-group-newsletter">
+                                <div class="col">
+                                    {{ form.email}}
+                                </div>
+                                <div class="col-auto"><button class="btn btn-primary" type="submit">Notificame!</button></div>
+                            </div>
+                        </form>
+                    {% endif %}
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 {% endblock %}

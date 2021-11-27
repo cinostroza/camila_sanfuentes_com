@@ -18,9 +18,6 @@
     <!-- Core theme CSS (includes Bootstrap)-->
     <link href="{% static 'css/styles.css'%}" rel="stylesheet" />
 
-    <!-- Medium Style Editor -->
-    <script src="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/js/medium-editor.min.js"></script>
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/medium-editor@latest/dist/css/medium-editor.min.css" type="text/css" media="screen" charset="utf-8">
     {% block head_block %}
     {% endblock %}
 </head>
@@ -40,9 +37,10 @@
                         Galerias
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">Paisajes</a></li>
-                        <li><a class="dropdown-item" href="#">Macrofotografia</a></li>
-                        <li><a class="dropdown-item" href="#">Fauna Salvaje</a></li>
+                        <li><a class="dropdown-item" href="{% url 'gallery:paisajes' %}">Paisajes</a></li>
+                        <li><a class="dropdown-item" href="{% url 'gallery:macro' %}">Macrofotografia</a></li>
+                        <li><a class="dropdown-item" href="{% url 'gallery:fauna' %}">Fauna</a></li>
+                        <li><a class="dropdown-item" href="{% url 'gallery:black_and_white' %}">Black and White</a></li>
                     </ul>
                 </li>
                 <li class="nav-item dropdown">
@@ -56,8 +54,8 @@
                         {% endif %}
                     </ul>
                 </li>
-                <li class="nav-item"><a class="nav-link" href="#signup">Contacto</a></li>
-                <li class="nav-item"><a class="nav-link" href="#about">Acerca de</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'index' %}#signup">Contacto</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'index' %}#about">Acerca de</a></li>
                 {% if user.is_authenticated %}
                     <li class="nav-item"><a class="nav-link" href="{% url 'logout'  %}">{{ user.username }}: Logout</a></li>
                 {% endif %}
@@ -75,9 +73,9 @@
         <div class="row gx-4 gx-lg-5">
         </div>
         <div class="social d-flex justify-content-center">
-            <a class="mx-2" href="mailto:sanfuentes.camila@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a class="mx-2" href="https://500px.com/p/camilasanfuentes"><i class="fab fa-500px"></i></a>
-            <a class="mx-2" href="https://www.instagram.com/camilasanfuentes.photo/"><i class="fab fa-instagram"></i></a>
+            <a class="mx-2" href="mailto:sanfuentes.camila@gmail.com" target="_blank" rel="noopener noreferrer"><i class="fas fa-envelope"></i></a>
+            <a class="mx-2" href="https://500px.com/p/camilasanfuentes" target="_blank" rel="noopener noreferrer"><i class="fab fa-500px"></i></a>
+            <a class="mx-2" href="https://www.instagram.com/camilasanfuentes.photo/" target="_blank" rel="noopener noreferrer"><i class="fab fa-instagram"></i></a>
         </div>
     </div>
 </section>
@@ -87,10 +85,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
 <!-- Core theme JS-->
 <script src="/static/js/scripts.js"></script>
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-<!-- * *                               SB Forms JS                               * *-->
-<!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-<!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 </body>
 </html>
