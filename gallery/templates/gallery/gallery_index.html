@@ -11,19 +11,19 @@
 {% block body_block %}
     {% for gallery in gallery_list %}
         <div class="container container-fluid bloghead" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url({{ gallery.gallery_top_image.url }});
-            background-position: center;
-            background-repeat: no-repeat;
-            background-attachment: scroll;
-            background-size: cover;">
-        <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
-            <div class="d-flex justify-content-center">
-                <div class="text-center">
-                    <h1 class="mx-auto my-0 text-uppercase">{{ gallery.title|safe }}</h1>
-                    <h2 class="text-white-50 mx-auto mt-2 mb-5">{{ gallery.description }}</h2>
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: scroll;
+                background-size: cover;">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <h1 class="mx-auto my-0 text-uppercase">{{ gallery.title|safe }}</h1>
+                        <h2 class="text-white-50 mx-auto mt-2 mb-5">{{ gallery.description }}</h2>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     {% endfor %}
     <div class="photo-gallery pb-5">
         <div class="container">
@@ -33,7 +33,10 @@
             </div>
             <div class="row photos">
                 {% for image in images %}
-                    <div class="col-sm-6 col-md-4 col-lg-3 item"><a href="{{ image.image_file.url }}" data-lightbox="photos"><img class="img-fluid" src="{{ image.image_file.url }}"></a></div>
+                    <div class="col-sm-6 col-md-4 {% if image.thumbnail_size == 'S' %} col-lg-3
+                                                    {% elif image.thumbnail_size == 'M' %} col-lg-6
+                                                    {% endif %} item"><a href="{{ image.image_file.url }}" data-lightbox="photos">
+                                                    <img class="img-fluid" src="{{ image.image_file.url }}"></a></div>
                 {% endfor %}
             </div>
         </div>

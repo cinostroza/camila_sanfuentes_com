@@ -1,6 +1,19 @@
 {%extends "base.html"%}
 {%block body_block%}
-    <div class="container-fluid bg-dark bg-opacity-75" style="padding-top: 5rem;"></div>
+        <div class="container container-fluid bloghead" style="background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.7) 75%, #000 100%), url(/static/assets/img/BLOG_HEAD.jpg);
+                background-position: center;
+                background-repeat: no-repeat;
+                background-attachment: scroll;
+                background-size: cover;">
+            <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
+                <div class="d-flex justify-content-center">
+                    <div class="text-center">
+                        <h1 class="mx-auto my-0 text-uppercase">Blog</h1>
+                        <h2 class="text-white-50 mx-auto mt-2 mb-5">Anécdotas y Tips de fotografía</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
 
     {%for post in post_list%}
         {% if post.date != '' %}
