@@ -3,9 +3,9 @@
 
 {% block head_block %}
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{% static 'css/gallery_style.css'%}">
+    <link rel="stylesheet" href="{% static 'css/justifiedGallery.min.css'%}" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/css/lightbox.min.css">
+
 {% endblock %}
 
 {% block body_block %}
@@ -25,23 +25,24 @@
             </div>
         </div>
     {% endfor %}
-    <div class="photo-gallery pb-5">
-        <div class="container">
-            <div class="intro">
-                <h2 class="text-center">{{ gallery.title }}</h2>
-                <p class="text-center">{{ gallery.description }}</p>
-            </div>
-            <div class="row photos">
-                {% for image in images %}
-                    <div class="col-sm-6 col-md-4 {% if image.thumbnail_size == 'S' %} col-lg-3
-                                                    {% elif image.thumbnail_size == 'M' %} col-lg-6
-                                                    {% endif %} item"><a href="{{ image.image_file.url }}" data-lightbox="photos">
-                                                    <img class="img-fluid" src="{{ image.image_file.url }}"></a></div>
-                {% endfor %}
-            </div>
+    <div class="container container-fluid pt-5 pb-5">
+        <div id="imageGallery">
+            {% for image in images %}
+                <a href="{{ image.image_file.url }}" title="{{ image.title }}" data-lightbox="photos">
+                    <img alt="{{ image.description }}" src="{{ image.image_file.url }}"/>
+                </a>
+            {% endfor %}
         </div>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.8.2/js/lightbox.min.js"></script>
+    <script src="{% static 'js/jquery.justifiedGallery.min.js'%}"></script>
+    <script>
+        $("#imageGallery").justifiedGallery({
+            rowHeight: 250,
+            margins: 5,
+            randomize: true,
+        });
+    </script>
 
 {% endblock %}
