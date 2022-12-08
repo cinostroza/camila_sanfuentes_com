@@ -13,7 +13,7 @@ services:
     depends_on:
       - db
     volumes:
-      - static_volume:/home/app/web/staticfiles
+      - static_volume:/home/camila_sanfuentes_com/web/staticfiles
   db:
     image: postgres:13.0-alpine
     volumes:
@@ -24,7 +24,7 @@ services:
   nginx:
     build: ./nginx
     volumes:
-      - static_volume:/home/app/web/staticfiles
+      - static_volume:/home/camila_sanfuentes_com/web/staticfiles
     ports:
       - 1337:80
     depends_on:
