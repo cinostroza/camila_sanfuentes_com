@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'editorjs_fields',
     'contact_manager',
     'gallery',
-    'ebhealthcheck.apps.EBHealthCheckConfig',
+#    'ebhealthcheck.apps.EBHealthCheckConfig',
 ]
 
 MIDDLEWARE = [
