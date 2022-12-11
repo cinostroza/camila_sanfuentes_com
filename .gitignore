@@ -1,5 +1,3 @@
-.env.prod
-.env.prod.db
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
