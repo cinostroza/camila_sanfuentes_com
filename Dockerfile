@@ -74,4 +74,3 @@ RUN chown -R camila_sanfuentes_com:camila_sanfuentes_com $APP_HOME
 USER camila_sanfuentes_com
 
 # run entrypoint.prod.sh
-ENTRYPOINT ["/home/camila_sanfuentes_com/web/entrypoint.prod.sh"]
