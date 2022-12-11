@@ -47,7 +47,7 @@ RUN addgroup -S camila_sanfuentes_com && adduser -S camila_sanfuentes_com -G cam
 ENV HOME=/home/camila_sanfuentes_com
 ENV APP_HOME=/home/camila_sanfuentes_com/web
 RUN mkdir $APP_HOME
-RUN mkdir $APP_HOME/staticfiles
+RUN mkdir $APP_HOME/static
 WORKDIR $APP_HOME
 
 # install dependencies
