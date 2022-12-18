@@ -11597,11 +11597,16 @@ body {
   background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.2));
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-          background-clip: text;
 }
 .masthead h2, .masthead .h2 {
   max-width: 20rem;
   font-size: 1rem;
+}
+@media (min-width: 200px) {
+  .masthead h1, .masthead .h1 {
+    font-size: 2rem;
+    line-height: 2rem;
+  }
 }
 @media (min-width: 768px) {
   .masthead h1, .masthead .h1 {
