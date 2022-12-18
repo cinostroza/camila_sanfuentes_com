@@ -8,7 +8,7 @@ class GalleryIndex(TemplateView):
 
 
 class MacroGallery(ListView):
-    queryset = Gallery.objects.filter(title='Macrofotografía')
+    queryset = Gallery.objects.filter(title='Macro')
     context_object_name = 'gallery_list'
     template_name = 'gallery/gallery_index.html'
 
@@ -16,7 +16,7 @@ class MacroGallery(ListView):
         # Call the base implementation first to get a context
         context = super().get_context_data(**kwargs)
         # Add in a QuerySet of all the books
-        context['images'] = GalleryImage.objects.filter(gallery__title='Macrofotografía')
+        context['images'] = GalleryImage.objects.filter(gallery__title='Macro')
         return context
 
 
