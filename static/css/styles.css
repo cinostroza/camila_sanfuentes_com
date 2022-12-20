@@ -11592,13 +11592,13 @@ body {
   max-width: 20rem;
   font-size: 1rem;
 }
-@media (min-width: 500px) {
+@media (min-width: 100px) {
   .bloghead h1, .bloghead .h1 {
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 635px) {
   .bloghead h1, .bloghead .h1 {
     font-size: 4rem;
     line-height: 4rem;
@@ -11634,13 +11634,13 @@ body {
   max-width: 20rem;
   font-size: 1rem;
 }
-@media (min-width: 500px) {
+@media (min-width: 100px) {
   .masthead h1, .masthead .h1 {
-    font-size: 2rem;
-    line-height: 2rem;
+    font-size: 1.8rem;
+    line-height: 1.8rem;
   }
 }
-@media (min-width: 768px) {
+@media (min-width: 635px) {
   .masthead h1, .masthead .h1 {
     font-size: 4rem;
     line-height: 4rem;
