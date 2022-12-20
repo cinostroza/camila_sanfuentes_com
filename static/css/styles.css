@@ -11592,7 +11592,7 @@ body {
   max-width: 20rem;
   font-size: 1rem;
 }
-@media (min-width: 200px) {
+@media (min-width: 500px) {
   .bloghead h1, .bloghead .h1 {
     font-size: 2rem;
     line-height: 2rem;
@@ -11634,7 +11634,7 @@ body {
   max-width: 20rem;
   font-size: 1rem;
 }
-@media (min-width: 200px) {
+@media (min-width: 500px) {
   .masthead h1, .masthead .h1 {
     font-size: 2rem;
     line-height: 2rem;
