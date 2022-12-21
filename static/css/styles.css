@@ -11606,7 +11606,6 @@ body {
 }
 @media (min-width: 992px) {
   .bloghead {
-    height: 100vh;
     padding: 0;
   }
   .bloghead h1, .bloghead .h1 {
