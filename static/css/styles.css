@@ -11605,9 +11605,6 @@ body {
   }
 }
 @media (min-width: 992px) {
-  .bloghead {
-    padding: 0;
-  }
   .bloghead h1, .bloghead .h1 {
     font-size: 6.5rem;
     line-height: 6.5rem;
