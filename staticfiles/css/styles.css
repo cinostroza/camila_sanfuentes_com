@@ -11587,7 +11587,37 @@ body {
   background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0));
   -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
-          background-clip: text;
+}
+
+.bloghead h2, .bloghead .h2 {
+  max-width: 20rem;
+  font-size: 1rem;
+}
+@media (min-width: 100px) {
+  .bloghead h1, .bloghead .h1 {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+  }
+}
+@media (min-width: 635px) {
+  .bloghead h1, .bloghead .h1 {
+    font-size: 4rem;
+    line-height: 4rem;
+  }
+}
+@media (min-width: 992px) {
+  .bloghead {
+    padding: 0;
+  }
+  .bloghead h1, .bloghead .h1 {
+    font-size: 6.5rem;
+    line-height: 6.5rem;
+    letter-spacing: 0.8rem;
+  }
+  .bloghead h2, .bloghead .h2 {
+    max-width: 30rem;
+    font-size: 1.25rem;
+  }
 }
 
 .masthead h1, .masthead .h1 {
