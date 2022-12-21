@@ -45,7 +45,8 @@ INSTALLED_APPS = [
     'editorjs_fields',
     'contact_manager',
     'gallery',
-    'storages'
+    'storages',
+    'camila_sanfuentes_com'
 #    'ebhealthcheck.apps.EBHealthCheckConfig',
 ]
 
