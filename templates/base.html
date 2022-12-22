@@ -69,6 +69,7 @@
                 <li class="nav-item"><a class="nav-link" href="{% url 'index' %}#signup">Contacto</a></li>
                 <li class="nav-item"><a class="nav-link" href="{% url 'index' %}#about">Acerca de</a></li>
                 {% if user.is_authenticated %}
+                    <li class="nav-item"><a class="nav-link" href="{% url 'admin:index' %}">Administración</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'logout'  %}">{{ user.username }}: Logout</a></li>
                 {% endif %}
             </ul>
