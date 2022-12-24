@@ -46,8 +46,8 @@ INSTALLED_APPS = [
     'contact_manager',
     'gallery',
     'storages',
-    'camila_sanfuentes_com'
-#    'ebhealthcheck.apps.EBHealthCheckConfig',
+    'camila_sanfuentes_com',
+   'ebhealthcheck.apps.EBHealthCheckConfig',
 ]
 
 MIDDLEWARE = [
