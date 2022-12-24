@@ -47,7 +47,6 @@ INSTALLED_APPS = [
     'gallery',
     'storages',
     'camila_sanfuentes_com',
-   'ebhealthcheck.apps.EBHealthCheckConfig',
 ]
 
 MIDDLEWARE = [
