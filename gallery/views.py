@@ -7,53 +7,16 @@ class GalleryIndex(TemplateView):
     template_name = 'gallery/index.html'
 
 
-class MacroGallery(ListView):
-    queryset = Gallery.objects.filter(title='Macro')
+class GalleryView(ListView):
     context_object_name = 'gallery_list'
     template_name = 'gallery/gallery_index.html'
 
     def get_context_data(self, **kwargs):
-        # Call the base implementation first to get a context
         context = super().get_context_data(**kwargs)
-        # Add in a QuerySet of all the books
-        context['images'] = GalleryImage.objects.filter(gallery__title='Macro')
+        context['images'] = GalleryImage.objects.filter(gallery__title__iexact=self.kwargs['gallery_name'])
+        context['galleries'] = Gallery.objects.all()
         return context
 
-
-class PaisajeGallery(ListView):
-    queryset = Gallery.objects.filter(title='Paisajes')
-    context_object_name = 'gallery_list'
-    template_name = 'gallery/gallery_index.html'
-
-    def get_context_data(self, **kwargs):
-        # Call the base implementation first to get a context
-        context = super().get_context_data(**kwargs)
-        # Add in a QuerySet of all the books
-        context['images'] = GalleryImage.objects.filter(gallery__title='Paisajes')
-        return context
-
-
-class FaunaGallery(ListView):
-    queryset = Gallery.objects.filter(title='Fauna')
-    context_object_name = 'gallery_list'
-    template_name = 'gallery/gallery_index.html'
-
-    def get_context_data(self, **kwargs):
-        # Call the base implementation first to get a context
-        context = super().get_context_data(**kwargs)
-        # Add in a QuerySet of all the books
-        context['images'] = GalleryImage.objects.filter(gallery__title='Fauna')
-        return context
-
-
-class BlackAndWhiteGallery(ListView):
-    queryset = Gallery.objects.filter(title='Blanco y Negro')
-    context_object_name = 'gallery_list'
-    template_name = 'gallery/gallery_index.html'
-
-    def get_context_data(self, **kwargs):
-        # Call the base implementation first to get a context
-        context = super().get_context_data(**kwargs)
-        # Add in a QuerySet of all the books
-        context['images'] = GalleryImage.objects.filter(gallery__title='Blanco y Negro')
-        return context
+    def get_queryset(self):
+        queryset = Gallery.objects.filter(title__iexact=self.kwargs['gallery_name'])
+        return queryset

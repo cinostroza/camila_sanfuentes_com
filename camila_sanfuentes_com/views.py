@@ -8,6 +8,8 @@ from contact_manager.forms import SubscribeForm
 from django.urls import reverse_lazy
 from django.contrib import messages
 
+from gallery.models import Gallery
+
 
 class Index(FormView):
     form_class = SubscribeForm
@@ -27,7 +29,9 @@ class Index(FormView):
         context = super().get_context_data(**kwargs)
         # Add in a QuerySet of all the books
         context['content'] = MainPageContent.objects.first()
+        context['galleries'] = Gallery.objects.all()
         return context
+
 
 def logout_view(request):
     logout(request)
