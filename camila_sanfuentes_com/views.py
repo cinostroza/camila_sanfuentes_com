@@ -13,7 +13,7 @@ from gallery.models import Gallery
 
 class Index(FormView):
     form_class = SubscribeForm
-    template_name = 'index.html'
+    template_name = 'index_new.html'
     success_url = reverse_lazy('index')
     context_object_name = 'content'
 

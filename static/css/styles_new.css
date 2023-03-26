@@ -1,0 +1,61 @@
+.carousel .carousel-item {
+    height: 200px;
+  }
+.carousel-item img {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    min-height: 200px;
+}
+
+@media (min-width: 992px) {
+    .carousel .carousel-item {
+        height: 400px;
+      }
+    .carousel-item img {
+        position: absolute;
+        top: -400px;
+        left: 0;
+        min-height: 400px;
+    }
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+  }
+.body-text {
+    font-family: "Lora";
+}
+
+.card-img-top {
+    width: 100%;
+    height: 40vw;
+    object-fit: cover;
+}
+
+.cs-portrait {
+    width: 30vw;
+    margin-top: auto;
+}
+
+@media (min-width: 992px) {
+    .card-img-top {
+        height: 15vw;
+    }
+    .cs-portrait {
+        width: 7vw;
+    }
+}
+
+.btn-primary {
+    background: #000;
+    border-color: #000;
+    color: #fff;
+}
+
+.form-input {
+    background: #f2f2f2;
+    color: #737373;
+    font-family: 'Lora';
+    border-color: #f2f2f2;
+}
