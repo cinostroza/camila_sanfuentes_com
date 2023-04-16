@@ -23,6 +23,7 @@
 body {
     font-family: "Open Sans", sans-serif;
   }
+
 .body-text {
     font-family: "Lora";
 }
@@ -58,4 +59,8 @@ body {
     color: #737373;
     font-family: 'Lora';
     border-color: #f2f2f2;
+}
+
+.muted-color {
+    color: #737373;
 }
