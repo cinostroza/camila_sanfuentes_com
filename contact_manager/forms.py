@@ -8,3 +8,20 @@ class SubscribeForm(forms.Form):
             'class': 'form-control',
         }
     ))
+
+
+class ContactForm(forms.Form):
+    email = forms.EmailField(widget=forms.TextInput(
+        attrs={
+            'class': 'form-control form-input',
+            'placeholder': 'Email:'
+        }
+    ))
+    topic = forms.Field(widget=forms.TextInput(attrs={
+        'class': 'form-control form-input',
+        'placeholder': 'Asunto: '
+    }))
+    message = forms.Field(widget=forms.Textarea(attrs={
+        'class': 'form-control form-input',
+        'placeholder': 'Mensaje: '
+    }))

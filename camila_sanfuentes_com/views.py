@@ -3,25 +3,29 @@ from django.contrib.auth import logout
 from django.shortcuts import redirect
 
 from camila_sanfuentes_com.models import MainPageContent
-from contact_manager.models import Subscriber
-from contact_manager.forms import SubscribeForm
+from contact_manager.models import ContactRequest
+from contact_manager.forms import ContactForm
 from django.urls import reverse_lazy
 from django.contrib import messages
 
-from gallery.models import Gallery
+from gallery.models import Gallery, GalleryImage
 
 
 class Index(FormView):
-    form_class = SubscribeForm
+    form_class = ContactForm
     template_name = 'index_new.html'
     success_url = reverse_lazy('index')
     context_object_name = 'content'
 
     def form_valid(self, form):
-        new_sub = Subscriber(email=form.data['email'])
-        new_sub.save()
+        new_message = ContactRequest(
+            email=form.data['email'],
+            topic=form.data['topic'],
+            message=form.data['message'],
+        )
+        new_message.save()
         messages.add_message(self.request, messages.INFO,
-                             'Se ha registrado tu correo existosamente!. Pronto recibiras actualizaciones.')
+                             'Hemos recibido tu mensaje y te contactaremos a la brevedad!')
         return super().form_valid(form)
 
     def get_context_data(self, **kwargs):
@@ -30,6 +34,7 @@ class Index(FormView):
         # Add in a QuerySet of all the books
         context['content'] = MainPageContent.objects.first()
         context['galleries'] = Gallery.objects.all()
+        context['carousel_images'] = GalleryImage.objects.filter(carousel_image=True).all()
         return context
 
 

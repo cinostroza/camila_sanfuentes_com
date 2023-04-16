@@ -1,4 +1,6 @@
 from django.views.generic import TemplateView, ListView
+
+from camila_sanfuentes_com.models import MainPageContent
 from gallery.models import Gallery, GalleryImage
 
 
@@ -13,6 +15,7 @@ class GalleryView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        context['content'] = MainPageContent.objects.first()
         context['images'] = GalleryImage.objects.filter(gallery__title__iexact=self.kwargs['gallery_name'])
         context['galleries'] = Gallery.objects.all()
         return context
