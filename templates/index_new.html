@@ -38,7 +38,9 @@
             {% for gallery in galleries %}
                 <div class="col-6 col-lg text-center">
                     <div class="card border-0">
-                        <img src="{{ gallery.gallery_top_image.url }}" class="card-img-top" alt="Una foto de un buho">
+                        <a href="/gallery/{{ gallery.title }}">
+                        <img src="{{ gallery.gallery_top_image.url }}"  class="card-img-top" alt="{{ gallery.description }}">
+                        </a>
                         <div class="card-body">
                             <h5 class="card-title">{{ gallery.title }}</h5>
                         </div>
