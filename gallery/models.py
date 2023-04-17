@@ -23,6 +23,7 @@ class GalleryImage(models.Model):
     image_file = models.ImageField(upload_to='gallery', null=False, blank=False)
     description = models.CharField(max_length=600, null=True, blank=True)
     thumbnail_size = models.CharField(max_length=1, choices=IMAGE_SIZES, default='S')
+    carousel_image = models.BooleanField(default=False)
 
     def __str__(self):
         return self.title
