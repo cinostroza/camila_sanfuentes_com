@@ -6,7 +6,6 @@ services:
       context: .
       dockerfile: Dockerfile
     command:
-      - "/bin/sh ./init-letsencrypt.sh"
       - gunicorn camila_sanfuentes_com.wsgi:application --bind 0.0.0.0:8000
     expose:
       - 8000
