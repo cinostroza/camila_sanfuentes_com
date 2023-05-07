@@ -69,5 +69,18 @@ docker-compose run --rm --entrypoint "\
 echo
 
 echo "### Reloading nginx ..."
-docker-compose exec current_nginx nginx -s reload
+# Replace <container-name> with the name of the container you want to restart
+CONTAINER_NAME="nginx"
+
+# Get the ID of the container using its name
+CONTAINER_ID=$(docker ps -qf "name=$CONTAINER_NAME")
+
+# Check if the container ID is not empty
+if [ ! -z "$CONTAINER_ID" ]; then
+  # Restart the container using its ID
+  docker restart $CONTAINER_ID
+  echo "Container '$CONTAINER_NAME' has been restarted."
+else
+  echo "Container '$CONTAINER_NAME' is not running."
+fi
 echo "### Script ran succesfully"
