@@ -69,5 +69,5 @@ docker-compose run --rm --entrypoint "\
 echo
 
 echo "### Reloading nginx ..."
-docker-compose exec nginx nginx -s reload
+docker-compose exec current_nginx nginx -s reload
 echo "### Script ran succesfully"
