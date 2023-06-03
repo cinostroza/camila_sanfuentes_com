@@ -64,3 +64,9 @@ body {
 .muted-color {
     color: #737373;
 }
+
+.custom-justify {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
