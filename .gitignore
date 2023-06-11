@@ -4,3 +4,4 @@
 !.elasticbeanstalk/*.global.yml
 static/django-editorjs-fields/*
 db.sqlite3
+.DS_Store
