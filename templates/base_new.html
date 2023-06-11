@@ -82,7 +82,7 @@
                             {% endif %}
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="{% url 'index' %}#contact-form">Contacto</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{% url 'contact_me' %}">Contacto</a></li>
                     <li class="nav-item"><a class="nav-link" href="{% url 'about_me' %}">Acerca de</a></li>
                     {% if user.is_authenticated %}
                         <li class="nav-item"><a class="nav-link" href="{% url 'admin:index' %}">Administración</a></li>
@@ -102,15 +102,15 @@
         <div class="row justify-content-center">
             <div id="footer-text" class="container">
                 <div class="row justify-content-center">
-                    <div class="col-auto fs-6 text-center">Galerias</div>
-                    <div class="col-auto fs-6 text-center">Blog</div>
-                    <div class="col-auto fs-6 text-center">Tienda</div>
-                    <div class="col-auto fs-6 text-center">Contacto</div>
-                    <div class="col-auto fs-6 text-center">Sobre mi</div>
+                    <div class="col-auto fs-6 text-center"><a href="#">Galerias</a></div>
+                    <div class="col-auto fs-6 text-center"><a href="{% url 'blog:post_list' %}">Blog</a></div>
+                    <div class="col-auto fs-6 text-center text-muted">Tienda</div>
+                    <div class="col-auto fs-6 text-center"><a href="{% url 'contact_me' %}">Contacto</a></div>
+                    <div class="col-auto fs-6 text-center"><a href="{% url 'about_me' %}">Sobre mi</a></div>
                 </div>
                 <div class="row justify-content-center pt-3">
-                    <div class="col-auto"><i class="fab fa-instagram fa-2x"></i></div>
-                    <div class="col-auto"><i class="fab fa-500px fa-2x"></i></div>
+                    <div class="col-auto"><a href="https://www.instagram.com/camilasanfuentes.photo/"><i class="fab fa-instagram fa-2x"></i></a></div>
+                    <div class="col-auto"><a href="https://500px.com/p/camilasanfuentes?view=photos"><i class="fab fa-500px fa-2x"></i></a></div>
                     <div class="col-auto"><i class="far fa-envelope fa-2x"></i></div>
                 </div>
             </div>
