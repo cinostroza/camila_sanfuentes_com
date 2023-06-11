@@ -27,5 +27,6 @@ urlpatterns = [
                   path('gallery/', include('gallery.urls', namespace='gallery')),
                   path('', views.Index.as_view(), name='index'),
                   path('about_me/', views.AboutMe.as_view(), name='about_me'),
+                  path('contact_me/', views.ContactMe.as_view(), name='contact_me'),
                   path('editorjs/', include('editorjs_fields.urls')),
               ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

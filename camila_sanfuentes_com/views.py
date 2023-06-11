@@ -11,10 +11,24 @@ from django.contrib import messages
 from gallery.models import Gallery, GalleryImage
 
 
-class Index(FormView):
-    form_class = ContactForm
+class Index(TemplateView):
     template_name = 'index_new.html'
-    success_url = reverse_lazy('index')
+    context_object_name = 'content'
+
+    def get_context_data(self, **kwargs):
+        # Call the base implementation first to get a context
+        context = super().get_context_data(**kwargs)
+        # Add in a QuerySet of all the books
+        context['content'] = MainPageContent.objects.first()
+        context['galleries'] = Gallery.objects.all()
+        context['carousel_images'] = GalleryImage.objects.filter(carousel_image=True).all()
+        return context
+
+
+class ContactMe(FormView):
+    form_class = ContactForm
+    template_name = 'contact_me.html'
+    success_url = reverse_lazy('contact_me')
     context_object_name = 'content'
 
     def form_valid(self, form):
