@@ -39,7 +39,11 @@
                 <div class="col-6 col-lg text-center">
                     <div class="card border-0">
                         <a href="/gallery/{{ gallery.title }}">
-                        <img src="{{ gallery.gallery_top_image.url }}"  class="card-img-top" alt="{{ gallery.description }}">
+                        {% if gallery.gallery_top_image %}
+                            <img src="{{ gallery.gallery_top_image.url }}"  class="card-img-top" alt="{{ gallery.description }}">
+                        {% else %}
+                            <img src="" class="card-img-top" alt="{{gallery.description}}">
+                        {% endif %}
                         </a>
                         <div class="card-body">
                             <h5 class="card-title">{{ gallery.title }}</h5>
