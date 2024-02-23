@@ -23,4 +23,4 @@ RUN pip install -r requirements.txt
 COPY . .
 
 # run entrypoint.sh
-ENTRYPOINT ["/usr/src/camila_sanfuentes_com/entrypoint.sh"]
+# ENTRYPOINT ["/usr/src/camila_sanfuentes_com/entrypoint.sh"]
